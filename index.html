@@ -96,6 +96,73 @@
         >
       </div>
     </section>
+    <!-- SECTION : Wégo Reserve -->
+<section class="wego-reserve" aria-labelledby="wego-reserve-title">
+  <div class="wego-reserve__grid">
+    <!-- Panneau gauche -->
+    <div class="wego-reserve__panel">
+      <h2 id="wego-reserve-title" class="wego-reserve__title">
+        Commandez votre course avec Wégo Reserve
+      </h2>
+
+      <div class="wego-reserve__form">
+        <div class="wego-reserve__field">
+          <label class="wego-reserve__label">Date</label>
+          <div class="wego-reserve__input">
+            <span class="wego-reserve__icon" aria-hidden="true">📅</span>
+            <input type="text" placeholder="Date" />
+          </div>
+        </div>
+
+        <div class="wego-reserve__field">
+          <label class="wego-reserve__label">Heure</label>
+          <div class="wego-reserve__input">
+            <span class="wego-reserve__icon" aria-hidden="true">⏱️</span>
+            <button class="wego-reserve__select">
+              Durée <span class="wego-reserve__caret">▾</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button class="wego-reserve__cta">Suivant</button>
+
+      <!-- Illustration téléphone -->
+      <div class="wego-reserve__phone" aria-hidden="true">
+        <svg viewBox="0 0 350 700" class="wego-reserve__phone-svg">
+          <rect x="20" y="20" rx="40" ry="40" width="310" height="660" fill="#111"/>
+          <rect x="38" y="80" rx="28" ry="28" width="274" height="540" fill="#fff"/>
+          <rect x="150" y="40" width="50" height="8" rx="4" fill="#333"/>
+          <text x="175" y="360" text-anchor="middle" font-size="64" font-family="Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial"
+                fill="#E91E63" font-weight="700">Wégo</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Panneau droit -->
+    <aside class="wego-reserve__benefits" aria-label="Avantages">
+      <h3 class="wego-reserve__benefits-title">Avantages</h3>
+
+      <ul class="wego-reserve__list">
+        <li class="wego-reserve__item">
+          <span class="wego-reserve__bullet">🗓️</span>
+          <span>Choix de l’heure exacte de prise en charge jusqu’à 90 jours à l’avance ;</span>
+        </li>
+        <li class="wego-reserve__item">
+          <span class="wego-reserve__bullet">⏲️</span>
+          <span>Temps d’attente supplémentaire inclus pour retrouver votre chauffeur ;</span>
+        </li>
+        <li class="wego-reserve__item">
+          <span class="wego-reserve__bullet">🧾</span>
+          <span>Annulation sans frais jusqu’à 60 minutes à l’avance.</span>
+        </li>
+      </ul>
+
+      <a href="#" class="wego-reserve__link">Consultez les conditions générales</a>
+    </aside>
+  </div>
+</section>
+
   </main>
 
   <script src="app.js"></script>
