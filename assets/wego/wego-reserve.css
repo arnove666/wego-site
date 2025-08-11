@@ -74,3 +74,23 @@
   .wego-reserve__grid{grid-template-columns:1fr;}
   .wego-reserve__phone{right:-20px; bottom:-60px; width:min(70%,400px);}
 }
+/* Mascotte Wégo (nouvelle illustration) */
+.wego-reserve__panel > *:not(.wego-reserve__mascot){
+  position: relative;
+  z-index: 1;
+}
+
+.wego-reserve__mascot{
+  position: absolute;
+  right: 16px;
+  bottom: 8px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.wego-reserve__mascot-img{
+  width: 209px;
+  max-width: 210px;
+  height: auto;
+  display: block;
+}
