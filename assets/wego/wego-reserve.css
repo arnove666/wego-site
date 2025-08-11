@@ -1,0 +1,76 @@
+/* Wégo Reserve — CSS dédié, namespacé */
+:root{
+  --wego-pink:#E91E63;
+  --wego-pink-soft:#FCE4EC;
+  --wego-text:#111;
+  --wego-radius:16px;
+}
+
+.wego-reserve{
+  max-width:1200px;
+  margin:0 auto;
+  padding:24px 0 48px;
+}
+
+.wego-reserve__grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:24px;
+  align-items:stretch;
+}
+
+.wego-reserve__panel{
+  background:var(--wego-pink-soft);
+  border-radius:var(--wego-radius);
+  padding:40px 32px 24px;
+  position:relative;
+  overflow:hidden;        /* empêche tout dépassement visuel */
+  min-height:420px;
+}
+
+.wego-reserve__title{
+  font-size:clamp(28px,4vw,44px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  color:var(--wego-text);
+  margin:0 0 24px;
+  max-width:22ch;
+}
+
+.wego-reserve__form{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:16px;}
+.wego-reserve__field{flex:1 1 240px; min-width:220px;}
+.wego-reserve__label{display:block; font-weight:600; margin:0 0 8px;}
+
+.wego-reserve__input{
+  display:flex; align-items:center; gap:10px;
+  background:#fff; border-radius:12px; padding:14px 16px;
+  border:1px solid #e5e7eb;
+}
+.wego-reserve__input input{border:0; outline:0; width:100%; font-size:16px;}
+.wego-reserve__select{all:unset; cursor:pointer; font-size:16px;}
+.wego-reserve__caret{margin-left:6px; opacity:.7}
+.wego-reserve__icon{width:20px; display:inline-flex; justify-content:center}
+
+.wego-reserve__cta{
+  margin-top:12px; background:#111; color:#fff; border:0; cursor:pointer;
+  border-radius:12px; padding:14px 22px; font-weight:700; font-size:16px;
+}
+
+/* Illustration téléphone */
+.wego-reserve__phone{position:absolute; right:-40px; bottom:-80px; width:min(55%,420px); pointer-events:none; opacity:.95;}
+.wego-reserve__phone-svg{width:100%; height:auto; display:block;}
+.wego-reserve__phone-img{position:absolute; right:-40px; bottom:-80px; width:min(55%,420px);}
+
+/* Bloc avantages */
+.wego-reserve__benefits{background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:28px 24px;}
+.wego-reserve__benefits-title{font-size:28px; margin:0 0 12px;}
+.wego-reserve__list{list-style:none; padding:0; margin:0;}
+.wego-reserve__item{display:grid; grid-template-columns:28px 1fr; gap:12px; padding:14px 0; border-top:1px solid #f1f5f9;}
+.wego-reserve__item:first-child{border-top:0;}
+.wego-reserve__bullet{font-size:20px; line-height:1.2}
+.wego-reserve__link{display:inline-block; margin-top:16px; color:#111; text-decoration:underline;}
+
+@media (max-width:980px){
+  .wego-reserve__grid{grid-template-columns:1fr;}
+  .wego-reserve__phone{right:-20px; bottom:-60px; width:min(70%,400px);}
+}
