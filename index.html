@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Wégo — Prototype v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{ --bg:#ffffff; --text:#0f0f10; --muted:#5a5a5e; --line:#e8e8ea; --rose:#ff2d7a; --radius:16px; --maxw:1200px; }
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+body{font-family:Roboto,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:saturate(1.2) blur(4px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:14px}
+.favicon{width:40px;height:40px;border-radius:10px;background:var(--rose);display:grid;place-items:center;box-shadow:0 6px 20px rgba(255,45,122,.35)}
+.favicon svg{width:24px;height:24px}
+.brand-name{font-weight:900;font-size:26px;letter-spacing:.2px}
+.nav-links{display:none;gap:16px;color:#222}
+.nav-right{display:flex;align-items:center;gap:12px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{background:transparent;border:0;padding:8px 12px;cursor:pointer;font-weight:700;color:var(--muted)}
+.seg button.active{color:var(--text);background:#f5f5f6}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:14px;border:1px solid transparent;font-weight:800;cursor:pointer;white-space:nowrap;transition:transform .06s ease, box-shadow .2s ease}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--rose);color:#fff;box-shadow:0 8px 20px rgba(255,45,122,.25)}
+.btn-secondary{background:#fff;border:1px solid var(--line);color:var(--text)}
+.hero{padding:56px 0;border-bottom:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:1fr;gap:28px}
+h1.hero-title{font-size:clamp(38px,6vw,64px);line-height:1.1;margin:0 0 12px}
+.lead{font-size:clamp(16px,2vw,20px);color:#2b2b2d;margin:0 0 12px}
+.form{display:grid;gap:14px;width:100%;max-width:560px}
+.input{height:56px;border:1px solid var(--line);border-radius:14px;padding:0 14px;font-size:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hero-side{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.hero-side img{width:100%;height:100%;object-fit:cover;display:block;max-height:420px}
+.note{font-size:13px;color:#6a6a6f}
+.section{padding:40px 0;border-bottom:1px solid var(--line)}
+.split{display:grid;grid-template-columns:1fr;gap:20px}
+.section h2{font-size:clamp(28px,4vw,40px);margin:0 0 12px}
+.section .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#ffe3ef;color:#a0184d;font-weight:700}
+.advantages li{margin:8px 0}
+footer{padding:24px 0}
+.foot{display:flex;align-items:center;justify-content:space-between;color:#555;border-top:1px solid var(--line);padding-top:16px}
+@media(min-width:960px){ .grid{grid-template-columns:6fr 6fr;align-items:center} .split{grid-template-columns:7fr 5fr;align-items:center} .nav-links{display:flex} }
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="favicon" aria-label="Logo Wégo">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 6l4 12 5-10 5 10 4-12" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="brand-name">Wégo</div>
+      <nav class="nav-links">
+        <a>Se déplacer avec Wégo</a><a>Professionnel</a><a>À propos</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="seg" aria-label="Langue">
+        <button class="active" onclick="setLang('fr')">FR</button>
+        <button onclick="setLang('en')">ENG</button>
+        <button onclick="setLang('ru')">RU</button>
+      </div>
+      <button class="btn btn-secondary" onclick="goLogin()">Se connecter</button>
+      <button class="btn btn-primary" onclick="goSignup()">Créer un compte</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="container hero" id="home">
+    <div class="grid">
+      <div>
+        <div class="note">Conakry, GN · <a href="#" onclick="alert('Changement de ville à venir')">Changer de ville</a></div>
+        <h1 class="hero-title">Allez où vous voulez avec Wégo</h1>
+        <form class="form" onsubmit="event.preventDefault(); estimate()">
+          <input class="input" id="pickup" type="text" placeholder="Lieu de prise en charge" />
+          <input class="input" id="dropoff" type="text" placeholder="Destination" />
+          <div class="form-row">
+            <input class="input" id="date" type="date" />
+            <input class="input" id="time" type="time" />
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button type="submit" class="btn btn-primary">Voir les prix</button>
+            <div class="note">Connectez-vous pour consulter votre activité récente</div>
+          </div>
+        </form>
+      </div>
+      <div class="hero-side"><img loading="lazy" src="assets/A_3D-rendered_digital_illustration_of_a_cartoon_Af.webp" alt="Chauffeur cartoon Wégo avec pancarte" loading="eager"></div>
+    </div>
+  </section>
+
+  <section class="container section" id="connect">
+    <div class="split">
+      <div>
+        <h2>Connectez-vous pour consulter les détails de votre compte</h2>
+        <p class="lead">Consultez vos trajets passés, vos suggestions personnalisées et plus encore.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+          <button class="btn btn-primary" onclick="goLogin()">Se connecter</button>
+          <button class="btn btn-secondary" onclick="goSignup()">Créer un compte</button>
+        </div>
+      </div>
+      <div class="card">
+        <img loading="lazy" src="assets/A_3D-rendered_digital_illustration_features_an_Afr.webp" alt="Illustration chauffeur Wégo" style="width:100%;height:auto;border-radius:12px;display:block">
+      </div>
+    </div>
+  </section>
+
+  <section class="container section" id="reserve">
+    <div class="split">
+      <div class="card" style="background:#f0fbff;border-color:#e0f3ff">
+        <div class="badge">Planifiez</div>
+        <h2 style="margin:10px 0 12px">Commandez votre course avec Wégo Reserve</h2>
+        <p class="lead">Choisissez une date et une heure.</p>
+        <div class="form-row" style="margin:10px 0">
+          <input class="input" type="date">
+          <input class="input" type="time">
+        </div>
+        <button class="btn btn-primary" onclick="alert('Étape suivante (démo)')">Suivant</button>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 6px">Avantages</h3>
+        <ul class="advantages">
+          <li>Choix de l'heure exacte de prise en charge, jusqu'à 90 jours à l'avance</li>
+          <li>Temps d'attente supplémentaire inclus pour retrouver votre chauffeur</li>
+          <li>Annulation sans frais jusqu'à 60 minutes à l'avance</li>
+        </ul>
+        <img loading="lazy" src="assets/A_2D_digital_illustration_showcases_a_cartoon-styl.webp" alt="Illustration app Wégo" style="width:100%;height:auto;border-radius:12px;display:block;margin-top:10px">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container foot"><div>© Wégo — Prototype v3</div><div></div></div></footer>
+
+<script>
+function setLang(code){
+  document.querySelectorAll('.seg button').forEach(b=>b.classList.remove('active'));
+  if(code==='fr') document.querySelector('.seg button:nth-child(1)').classList.add('active');
+  if(code==='en') document.querySelector('.seg button:nth-child(2)').classList.add('active');
+  if(code==='ru') document.querySelector('.seg button:nth-child(3)').classList.add('active');
+}
+function goLogin(){alert('Connexion (démo) — Arnove / wego123456789')}
+function goSignup(){alert('Création de compte (démo)')}
+function estimate(){
+  const s=document.getElementById('pickup').value.trim();
+  const e=document.getElementById('dropoff').value.trim();
+  if(!s||!e){alert('Renseignez le lieu de prise en charge et la destination.');return;}
+  alert('Estimation (démo) — puis choix: SUV premium / berline / moto');
+}
+</script>
+</body></html>
