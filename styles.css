@@ -96,3 +96,79 @@ main{padding:24px}
   .hero-img{max-height:380px}
   .main-nav{display:none} /* simplifié: menu compact à faire plus tard */
 }
+/* ===== Section Suggestions ===== */
+.suggestions {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px 12px;
+}
+
+.suggestions h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 18px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Carte */
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  border-color: #e2e2e2;
+}
+
+.card-text { flex: 1 1 auto; min-width: 0; }
+.card-text h3 { margin: 0 0 6px; font-size: 18px; }
+.card-text p  { margin: 0 0 12px; color: var(--muted); line-height: 1.45; }
+
+/* Bouton */
+.btn-details {
+  appearance: none;
+  border: 0;
+  background: var(--wego-rose);
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.btn-details:hover { filter: brightness(0.95); }
+
+/* Image */
+.card-image { flex: 0 0 auto; }
+.card-image img {
+  display: block;
+  width: 96px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 980px) {
+  .cards-container { grid-template-columns: 1fr; }
+  .card { padding: 14px 16px; }
+  .card-image img { width: 80px; }
+}
+
+@media (min-width: 981px) and (max-width: 1199px) {
+  .cards-container { grid-template-columns: repeat(2, 1fr); }
+}
