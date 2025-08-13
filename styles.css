@@ -368,3 +368,60 @@ section {
   background: var(--wego-rose);
   color: #fff;
 }
+/* =========================================================
+   OVERRIDE GLOBAL — Contours roses (hors bannière du haut)
+   ========================================================= */
+/* NB : on n'affecte PAS .site-header ni ce qu'il contient */
+:root {
+  /* petite variable pratique si tu veux réutiliser le rose de contour */
+  --wego-border-rose: rgba(233, 30, 99, 0.25); /* #E91E63 à 25% */
+}
+
+/* Conteneurs / cartes / panneaux principaux */
+.hero,
+.wego-reserve__panel,
+.wego-reserve__benefits,
+.suggestions .card,
+.news-hero,
+.news-card,
+.news-ticker {
+  border-color: var(--wego-border-rose) !important;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 12px;
+}
+
+/* Inputs du HERO (date/heure/adresses) */
+.input {
+  border-color: var(--wego-border-rose) !important;
+}
+
+/* Image du HERO (mascotte) */
+.hero-img {
+  border-color: var(--wego-border-rose) !important;
+}
+
+/* Cartes Suggestions — état hover un peu plus marqué */
+.card:hover {
+  border-color: rgba(233, 30, 99, 0.35) !important;
+}
+
+/* News : les anciennes bordures grises passent en rose */
+.news-hero,
+.news-card {
+  border-color: var(--wego-border-rose) !important;
+}
+.news-social {
+  border-top: 1px dashed var(--wego-border-rose) !important;
+}
+
+/* Dropdown / panneaux éventuels (hors header) */
+.dropdown-panel {
+  border-color: var(--wego-border-rose) !important;
+}
+
+/* Sécurité : n’applique jamais le contour rose sur la bannière */
+.site-header,
+.site-header * {
+  border-color: inherit !important;
+}
