@@ -425,3 +425,55 @@ section {
 .site-header * {
   border-color: inherit !important;
 }
+/* =========================
+   BLOC DOUBLE — ALIGNEMENT PIXEL PARFAIT
+   ========================= */
+
+/* Conteneur principal déjà centré */
+.main-container {
+  max-width: 1200px; /* largeur max desktop */
+  margin: 0 auto;
+  padding: 0 22px; /* mêmes marges latérales que ton header */
+  box-sizing: border-box;
+}
+
+/* Conteneur des deux blocs */
+.double-block-container {
+  display: flex;
+  gap: 24px; /* même écart que dans ton site */
+  width: 100%;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+/* Style de chaque bloc */
+.double-block-container .bloc {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  min-height: 160px; /* pour uniformiser la hauteur */
+}
+
+/* Titres */
+.double-block-container .bloc h3 {
+  margin-top: 0;
+  color: var(--text);
+}
+
+/* Texte */
+.double-block-container .bloc p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Responsive : blocs empilés */
+@media (max-width: 768px) {
+  .double-block-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
