@@ -347,7 +347,13 @@ section {
   color: #fff;
   box-shadow: none;            /* supprime l'ombre rose de .btn.primary */
 }
+/* 
+ * STYLE SPÉCIFIQUE — Badge "Trending now" (section Actualités)
+ * Ce style ne s'applique qu'au petit badge situé dans la barre .news-ticker,
+ * afin qu'il ait le même fond rose que celui utilisé dans
+ * "Commandez votre course avec Wégo Reserve".
+ */
 .news-ticker .badge {
-  background: var(--wego-rose); /* rose Wégo */
-  color: #E91E63;                  /* texte en blanc pour contraste */
+  background: var(--wego-rose); /* Fond rose Wégo (#E91E63) */
+  color: #fff;                  /* Texte en blanc pour contraste */
 }
