@@ -349,5 +349,5 @@ section {
 }
 .news-ticker .badge {
   background: var(--wego-rose); /* rose Wégo */
-  color: #fff;                  /* texte en blanc pour contraste */
+  color: #E91E63;                  /* texte en blanc pour contraste */
 }
