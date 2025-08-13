@@ -347,3 +347,7 @@ section {
   color: #fff;
   box-shadow: none;            /* supprime l'ombre rose de .btn.primary */
 }
+.news-ticker .badge {
+  background: var(--wego-rose); /* rose Wégo */
+  color: #fff;                  /* texte en blanc pour contraste */
+}
