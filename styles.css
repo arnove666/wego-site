@@ -208,4 +208,28 @@ main{padding:24px}
   .news-grid{grid-template-columns:1fr;gap:14px}
   .news-cover img{height:220px}
 }
+/* Uniformisation des panneaux / cartes dans toutes les sections */
+.hero,
+.wego-reserve__panel,
+.wego-reserve__benefits,
+.suggestions .card,
+.news-hero,
+.news-card,
+.news-ticker {
+  background: var(--bg);
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+}
 
+/* Optionnel : un peu d'air à l'intérieur là où il n’y en avait pas encore */
+.hero,
+.wego-reserve__panel,
+.wego-reserve__benefits {
+  padding: 16px 18px;
+}
+
+/* Les news avaient déjà un border:1px → on force à 2px si besoin */
+.news-hero,
+.news-card {
+  border-width: 2px;
+}
