@@ -268,3 +268,9 @@ main{padding:24px}
 section {
   margin-top: 40px;
 }
+.social-icon {
+  width: 28px;      /* Taille ajustable */
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
