@@ -233,3 +233,22 @@ main{padding:24px}
 .news-card {
   border-width: 2px;
 }
+/* Uniformisation des panneaux / cartes */
+.hero,
+.wego-reserve__panel,
+.wego-reserve__benefits,
+.suggestions .card,
+.news-hero,
+.news-card,
+.news-ticker {
+  background: var(--bg);
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+}
+
+/* Padding pour les sections texte */
+.hero,
+.wego-reserve__panel,
+.wego-reserve__benefits {
+  padding: 16px 18px;
+}
