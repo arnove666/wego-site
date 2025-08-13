@@ -511,8 +511,8 @@ section {
 }
 
 .social-icons img.social-icon{
-  width: 168px; /* ×3 la taille initiale */
-  height: 168px;
+  width: 112px; /* ×2 la taille initiale */
+  height: 112px;
   border: none;
   filter: invert(27%) sepia(64%) saturate(5124%) hue-rotate(326deg) brightness(93%) contrast(96%);
 }
