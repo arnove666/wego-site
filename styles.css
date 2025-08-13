@@ -274,3 +274,8 @@ section {
   display: inline-block;
   vertical-align: middle;
 }
+.news-social img {
+  width: 42px; /* taille du calendrier dans ton site */
+  height: auto;
+  vertical-align: middle; /* aligne le logo au texte si besoin */
+}
