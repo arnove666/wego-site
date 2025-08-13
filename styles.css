@@ -252,12 +252,19 @@ main{padding:24px}
 .wego-reserve__benefits {
   padding: 16px 18px;
 }
+
 /* Titres de section (même style que "Suggestions") */
 .section-title{
   font-size: 28px;
   font-weight: 800;
   margin: 0 0 18px;
 }
+
+/* Espace avant la section Actualités */
+.news {
+  margin-top: 40px; /* adapte la valeur si besoin pour correspondre exactement */
+}
+
 section {
   margin-top: 40px;
 }
