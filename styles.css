@@ -286,3 +286,64 @@ section {
   background: none;  /* supprime le fond blanc */
   padding: 0;        /* enlève les marges internes */
 }
+/* ===== Header : bande rose ===== */
+.site-header{
+  background: var(--wego-rose);  /* #E91E63 */
+  border-bottom: none;
+}
+
+/* Logo W en fond noir */
+.logo{
+  background: #000;      /* noir */
+  color: #fff;
+}
+
+/* Liens du menu avec bordure 2px (Se déplacer…, Professionnel, À propos) */
+.main-nav .nav-link{
+  display: inline-block;
+  padding: 8px 12px;
+  border: 2px solid #111;
+  border-radius: 14px;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Le bouton "À propos" est stylé comme un lien (pas de fond gris) */
+.nav-dropdown .nav-link.has-caret{
+  background: transparent;
+  border: 2px solid #111;
+  border-radius: 14px;
+  padding: 8px 12px;
+  box-shadow: none;
+}
+
+/* État hover/active des liens du menu : pas de fond gris */
+.main-nav .nav-link:hover,
+.nav-dropdown .nav-link.has-caret:hover{
+  background: transparent;
+}
+
+/* Sélecteur de langue : ENG/RU sans fond gris, FR actif en noir  */
+.chip{
+  background: transparent;     /* enlève le fond gris */
+  border: 2px solid #111;      /* bordure 2px demandée */
+  color: #111;
+}
+.chip--on{
+  background: #000;            /* FR actif = noir */
+  border-color: #000;
+  color: #fff;
+}
+
+/* Boutons à droite du header */
+#btn-login{
+  border: 2px solid #111;      /* bordure 2px */
+  background: transparent;     /* pas de fond gris */
+  color: #111;
+}
+#btn-signup{
+  background: #000;            /* fond noir demandé */
+  border: 2px solid #000;
+  color: #fff;
+  box-shadow: none;            /* supprime l'ombre rose de .btn.primary */
+}
