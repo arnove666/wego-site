@@ -480,58 +480,56 @@ section {
 /* === Bande sociale : personnage + 4 icônes sur UNE seule ligne === */
 .news-social.social-section{
   display: flex;
-  align-items: center;       /* Centre verticalement personnage + icônes */
+  align-items: flex-start;    /* Aligne en haut, ajustement via margin */
   justify-content: flex-start;
-  gap: 28px;
-  flex-wrap: nowrap;         /* Tout reste sur une seule ligne */
+  gap: 40px;                  /* Plus d’espace pour de grandes icônes */
+  flex-wrap: nowrap;
   border-top: 1px dashed var(--border);
   padding-top: 14px;
   position: relative;
-  overflow: visible;         /* Autorise le “débordement” à gauche du perso */
-  line-height: 0;            /* Supprime les espaces parasites entre inline */
+  overflow: visible;
+  line-height: 0;
 }
 
-/* Personnage : 4x plus grand et décalé à gauche */
+/* Personnage */
 .social-invite{
-  height: 12cm;              /* ≈ 4 × 3 cm */
+  height: 12cm;
   width: auto;
   object-fit: contain;
   display: block;
-  margin-right: 8px;
-  transform: translateX(-120px);          /* Déport vers la gauche (augmente si tu veux encore plus) */
+  transform: translateX(-120px);
   filter: drop-shadow(0 8px 24px rgba(0,0,0,.14));
 }
 
-/* Ligne d’icônes */
+/* Icônes */
 .social-icons{
   display: flex;
-  align-items: center;       /* Centre verticalement par rapport au perso */
-  gap: 24px;
+  align-items: center;
+  gap: 36px; /* espace entre icônes */
   flex-wrap: nowrap;
+  margin-top: 75px; /* décale le bloc vers le haut pour niveau pancarte */
 }
 
-/* Icônes (rose Wégo) */
 .social-icons img.social-icon{
-  width: 56px;
-  height: 56px;
+  width: 168px; /* ×3 la taille initiale */
+  height: 168px;
   border: none;
   filter: invert(27%) sepia(64%) saturate(5124%) hue-rotate(326deg) brightness(93%) contrast(96%);
 }
 
-/* ===== Responsive ===== */
-/* Écrans larges mais pas énormes : on réduit un peu la taille et le débordement */
+/* Responsive */
 @media (max-width: 1400px){
   .social-invite{ height: 9cm; transform: translateX(-90px); }
+  .social-icons{ margin-top: 55px; }
+  .social-icons img.social-icon{ width: 140px; height: 140px; }
 }
-
-/* Tablettes */
 @media (max-width: 980px){
   .social-invite{ height: 6cm; transform: translateX(-60px); }
-  .social-icons img.social-icon{ width: 46px; height: 46px; }
+  .social-icons{ margin-top: 40px; }
+  .social-icons img.social-icon{ width: 110px; height: 110px; }
 }
-
-/* Mobiles */
 @media (max-width: 640px){
   .social-invite{ height: 3.2cm; transform: translateX(-30px); }
-  .social-icons img.social-icon{ width: 40px; height: 40px; }
+  .social-icons{ margin-top: 25px; }
+  .social-icons img.social-icon{ width: 80px; height: 80px; }
 }
