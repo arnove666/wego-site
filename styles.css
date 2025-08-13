@@ -254,7 +254,7 @@ main{padding:24px}
 }
 
 /* Titres de section (même style que "Suggestions") */
-.section-title{
+.section-title {
   font-size: 28px;
   font-weight: 800;
   margin: 0 0 18px;
@@ -262,33 +262,27 @@ main{padding:24px}
 
 /* Espace avant la section Actualités */
 .news {
-  margin-top: 40px; /* adapte la valeur si besoin pour correspondre exactement */
+  margin-top: 40px; /* adapte la valeur si besoin */
 }
 
 section {
   margin-top: 40px;
 }
+
+/* Icônes réseaux sociaux */
 .social-icon {
-  width: 28px;      /* Taille ajustable */
-  height: auto;
+  width: 48px;  /* deux fois plus grand que l’original (24px) */
+  height: 48px;
   display: inline-block;
   vertical-align: middle;
-}
-.news-social img {
-  width: 42px; /* taille du calendrier dans ton site */
-  height: auto;
-  vertical-align: middle; /* aligne le logo au texte si besoin */
-}
-.social-icon {
-  width: 48px; /* deux fois plus grand que l’original (24px) */
-  height: 48px;
   border: none; /* supprime toute bordure */
   filter: invert(27%) sepia(64%) saturate(5124%) hue-rotate(326deg) brightness(93%) contrast(96%);
-  /* Ce filter applique ton rose #E91E63 sur un SVG/PNG noir */
+  /* applique le rose Wégo (#E91E63) sur les PNG/SVG noirs */
 }
 
+/* Conteneur des icônes sociales */
 .news-social a {
-  border: none; /* supprime le contour des liens */
-  background: none; /* supprime le fond blanc */
-  padding: 0; /* enlève les marges intérieures autour du logo */
+  border: none;      /* supprime le contour des liens */
+  background: none;  /* supprime le fond blanc */
+  padding: 0;        /* enlève les marges internes */
 }
