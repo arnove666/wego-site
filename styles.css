@@ -279,3 +279,16 @@ section {
   height: auto;
   vertical-align: middle; /* aligne le logo au texte si besoin */
 }
+.social-icon {
+  width: 48px; /* deux fois plus grand que l’original (24px) */
+  height: 48px;
+  border: none; /* supprime toute bordure */
+  filter: invert(27%) sepia(64%) saturate(5124%) hue-rotate(326deg) brightness(93%) contrast(96%);
+  /* Ce filter applique ton rose #E91E63 sur un SVG/PNG noir */
+}
+
+.news-social a {
+  border: none; /* supprime le contour des liens */
+  background: none; /* supprime le fond blanc */
+  padding: 0; /* enlève les marges intérieures autour du logo */
+}
