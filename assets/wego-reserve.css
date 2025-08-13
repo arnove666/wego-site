@@ -62,7 +62,7 @@
 .wego-reserve__phone-img{position:absolute; right:-40px; bottom:-80px; width:min(55%,420px);}
 
 /* Bloc avantages */
-.wego-reserve__benefits{background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:28px 24px;}
+.wego-reserve__benefits{background:#fff; border:2px solid #e5e7eb; border-radius:16px; padding:28px 24px;}
 .wego-reserve__benefits-title{font-size:28px; margin:0 0 12px;}
 .wego-reserve__list{list-style:none; padding:0; margin:0;}
 .wego-reserve__item{display:grid; grid-template-columns:28px 1fr; gap:12px; padding:14px 0; border-top:1px solid #f1f5f9;}
