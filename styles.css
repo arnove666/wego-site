@@ -477,3 +477,70 @@ section {
     gap: 16px;
   }
 }
+/* === Réseaux sociaux — personnage décalé à gauche === */
+
+/* On réutilise ton conteneur .news-social, on lui ajoute .social-section dans le HTML */
+.news-social.social-section{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  border-top:1px dashed var(--border);
+  padding-top:14px;
+
+  /* Pour autoriser le dépassement visuel vers la gauche */
+  position:relative;
+  overflow:visible;
+}
+
+/* Le personnage “Rejoignez‑nous” (PNG sans fond) */
+.social-invite{
+  height:3cm;                 /* demandé */
+  width:auto;
+  object-fit:contain;
+  pointer-events:none;         /* non cliquable, pure déco */
+
+  /* décalage vers la gauche pour “casser” la grille */
+  margin-left:-60px;           /* décale en dehors de la zone blanche */
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.12)); /* léger relief sympa */
+}
+
+/* Le groupe d’icônes à droite du personnage */
+.social-icons{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+/* Si tu utilises des <img class="social-icon"> (ta config actuelle) */
+.social-icons img.social-icon{
+  width:56px;
+  height:56px;
+  border:none;
+  /* rose Wégo appliqué sur icônes noires */
+  filter: invert(27%) sepia(64%) saturate(5124%) hue-rotate(326deg) brightness(93%) contrast(96%);
+}
+
+/* Si tu utilises des <i class="icon-...">, garde ceci pour une hitbox propre */
+.social-icons a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:56px; height:56px;
+  background:none;
+  border:none;
+  padding:0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 980px){
+  .news-social.social-section{
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .social-invite{
+    height:2.2cm;       /* un peu plus petit sur mobile */
+    margin-left:0;      /* on annule le dépassement pour garder de l’air */
+    order:-1;           /* option : place le perso au-dessus des icônes */
+  }
+  .social-icons img.social-icon{ width:44px; height:44px; }
+}
