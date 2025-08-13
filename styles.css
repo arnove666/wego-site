@@ -357,3 +357,14 @@ section {
   background: var(--wego-rose); /* Fond rose Wégo (#E91E63) */
   color: #fff;                  /* Texte en blanc pour contraste */
 }
+/* ---- Trending now : barre complète en rose léger ---- */
+.news .news-ticker {
+  background: rgba(233, 30, 99, 0.08);   /* rose #E91E63 avec transparence */
+  border-color: rgba(233, 30, 99, 0.25);  /* bordure accordée au fond */
+}
+
+/* Le badge reste en rose plein */
+.news-ticker .badge {
+  background: var(--wego-rose);
+  color: #fff;
+}
