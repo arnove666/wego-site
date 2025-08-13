@@ -271,8 +271,8 @@ section {
 
 /* Icônes réseaux sociaux */
 .social-icon {
-  width: 48px;  /* deux fois plus grand que l’original (24px) */
-  height: 48px;
+  width: 70px;  /* deux fois plus grand que l’original (24px) */
+  height: 70px;
   display: inline-block;
   vertical-align: middle;
   border: none; /* supprime toute bordure */
